@@ -1,1 +1,42 @@
+name: CMake Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Abhängigkeiten installieren
+        run: sudo apt-get update && sudo apt-get install -y cmake gcc
+
+      - name: Build-Verzeichnis erstellen
+        run: mkdir -p build
+
+      - name: CMake konfigurieren
+        run: cd build && cmake ..
+
+      - name: Code kompilieren
+        run: cd build && make
+
+      - name: Programm ausführen (optional)
+        run: ./build/programm
+
+      - name: Zeige erstellte Datei
+        run: dir build\
+
+      - name: Build-Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Programm
+          path: build/programm*  # Linux/macOS (ohne .exe) & Windows (.exe)
 
