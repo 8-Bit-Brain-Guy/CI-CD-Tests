@@ -1,0 +1,61 @@
+name: Multi-Platform C Build
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Installiere Compiler (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y gcc
+
+      - name: Installiere Compiler (Windows)
+        if: runner.os == 'Windows'
+        run: choco install mingw --version=11.2.0 -y
+        shell: cmd
+
+      - name: Compiler-Version anzeigen
+        run: gcc --version
+        shell: bash
+
+      - name: Code kompilieren (Linux)
+        if: runner.os == 'Linux'
+        run: gcc src/main.c -o program
+
+      - name: Code kompilieren (Windows)
+        if: runner.os == 'Windows'
+        run: gcc src/main.c -o program.exe
+
+      - name: Zeige erstellte Datei (Linux)
+        if: runner.os == 'Linux'
+        run: ls -lh program
+
+      - name: Zeige erstellte Datei (Windows)
+        if: runner.os == 'Windows'
+        run: dir program.exe
+        shell: cmd
+
+      - name: Build-Artefakt hochladen (Linux)
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Program-Linux
+          path: program
+
+      - name: Build-Artefakt hochladen (Windows)
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Program-Windows
+          path: program.exe
