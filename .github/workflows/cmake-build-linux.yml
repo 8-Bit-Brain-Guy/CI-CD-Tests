@@ -28,11 +28,11 @@ jobs:
       - name: Code kompilieren
         run: cd build && make
 
-      - name: Programm ausführen (optional)
-        run: ./build/programm
-
       - name: Zeige erstellte Datei
         run: dir build\
+        
+      - name: Programm ausführen (optional)
+        run: ./build/programm
 
       - name: Build-Artefakt hochladen
         uses: actions/upload-artifact@v4
