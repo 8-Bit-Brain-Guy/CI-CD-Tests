@@ -1,0 +1,35 @@
+name: Windows CMake Build
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: MinGW installieren
+        run: choco install mingw --version=11.2.0 -y
+        shell: cmd
+
+      - name: Build-Verzeichnis erstellen
+        run: mkdir build
+
+      - name: CMake konfigurieren
+        run: cd build && cmake .. -G "MinGW Makefiles"
+
+      - name: Code kompilieren
+        run: cd build && mingw32-make
+
+      - name: Zeige erstellte Datei
+        run: dir build\
+
+      - name: Build-Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Program-Windows
+          path: build/program.exe
