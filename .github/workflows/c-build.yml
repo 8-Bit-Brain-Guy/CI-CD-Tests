@@ -23,7 +23,7 @@ jobs:
         run: gcc -o main main.c
 
       - name: Zeige erstellte Datei
-        run: ls -lh build/
+        run: ls -lh
 
       - name: Programm ausführen (optional)
         run: ./main
