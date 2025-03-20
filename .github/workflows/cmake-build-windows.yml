@@ -28,6 +28,10 @@ jobs:
       - name: Zeige erstellte Datei
         run: dir build\
 
+      - name: Programm ausführen (optional)
+        run: build\program.exe
+        shell: cmd
+
       - name: Build-Artefakt hochladen
         uses: actions/upload-artifact@v4
         with:
