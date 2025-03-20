@@ -1,4 +1,4 @@
-name: Windows CMake Build
+name: CMake Build Windows
 
 on:
   workflow_dispatch:
