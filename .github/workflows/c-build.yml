@@ -24,3 +24,9 @@ jobs:
 
       - name: Programm ausführen (optional)
         run: ./main
+
+      - name: Build-Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: MeinProgramm
+          path: build/mein_programm*  # Linux/macOS (ohne .exe) & Windows (.exe)
