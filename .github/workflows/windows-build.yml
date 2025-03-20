@@ -1,0 +1,38 @@
+name: Windows C Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: MinGW installieren
+        run: choco install mingw --version=11.2.0 -y
+        shell: cmd
+
+      - name: Compiler-Version anzeigen
+        run: gcc --version
+        shell: cmd
+
+      - name: Code kompilieren
+        run: gcc main.c -o main.exe
+
+      - name: Zeige erstellte Datei
+        run: dir main.exe
+        shell: cmd
+
+      - name: Build-Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: MeinProgramm-Windows
+          path: main.exe
