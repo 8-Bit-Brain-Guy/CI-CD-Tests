@@ -37,6 +37,6 @@ jobs:
       - name: Build-Artefakt hochladen
         uses: actions/upload-artifact@v4
         with:
-          name: Programm
+          name: Programm-Windows
           path: build/programm*  # Linux/macOS (ohne .exe) & Windows (.exe)
 
