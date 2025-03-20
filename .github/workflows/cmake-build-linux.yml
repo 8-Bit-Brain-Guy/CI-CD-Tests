@@ -1,4 +1,4 @@
-name: CMake Build Windows
+name: CMake Build Linux
 
 on:
   workflow_dispatch:
