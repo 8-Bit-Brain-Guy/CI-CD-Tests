@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get install -y gcc libcriterion-dev
 
       - name: Compile tests
-        run: gcc -o test_main test_main.c -lcriterion
+        run: gcc -o build/test_main src/test_main.c -lcriterion
 
       - name: Run tests
-        run: ./test_main
+        run: ./build/test_main
