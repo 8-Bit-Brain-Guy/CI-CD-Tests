@@ -6,7 +6,7 @@
 
 ```
 Manual builds:
-- change into direcory CI-CD-Tests
+- change into direcory "CI-CD-Tests"
 
 Linux:
     gcc -o build/program-linux src/main.c
