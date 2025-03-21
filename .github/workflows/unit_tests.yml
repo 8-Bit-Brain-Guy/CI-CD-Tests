@@ -9,6 +9,15 @@ jobs:
     name: Run unit tests
     runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: sudo apt-get install -y gcc libcriterion-dev
+
+      - name: Compile tests
+        run: gcc -o test_main test_main.c -lcriterion
+
+      - name: Run tests
+        run: ./test_main
