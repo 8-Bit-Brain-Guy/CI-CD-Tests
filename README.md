@@ -11,9 +11,6 @@ Manual builds:
 Linux:
     gcc -o build/program-linux src/main.c
 
-
 Windows (mingw64 is in path):
-    gcc -o build/program-linux src/main.c
-
-
+    gcc -o build/program-windows src/main.c
 ```
