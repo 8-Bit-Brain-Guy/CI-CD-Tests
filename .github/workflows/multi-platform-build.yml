@@ -22,7 +22,7 @@ jobs:
 
       - name: Installiere Compiler (Windows)
         if: runner.os == 'Windows'
-        run: choco install mingw --version=11.2.0 -y
+        run: choco install mingw -y
         shell: cmd
 
       - name: Compiler-Version anzeigen
