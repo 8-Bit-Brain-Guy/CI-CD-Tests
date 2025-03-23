@@ -10,6 +10,7 @@
     - CMake Build Linux for a Linux Build
     - CMake Build Linux for a Windows Build
     - CMake Multi-Platform C Build for a Linux and Windows Build
+        - Sucessful builds are downloadable in "Build Artefakte hochladen (...)" -> "Artifact download URL: ..."
     - Unit Tests for running Unit Tests
 
 ```
