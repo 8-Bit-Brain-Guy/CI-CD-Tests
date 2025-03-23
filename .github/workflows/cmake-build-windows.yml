@@ -13,11 +13,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: MinGW installieren
-        run: choco install mingw --version=11.2.0 -y
+        run: choco install mingw -y
         shell: cmd
 
-      - name: Build-Verzeichnis erstellen
-        run: mkdir build
+#      - name: Build-Verzeichnis erstellen
+#        run: mkdir build
 
       - name: CMake konfigurieren
         run: cd build && cmake .. -G "MinGW Makefiles"
