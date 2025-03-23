@@ -4,13 +4,22 @@
     - Unit Testing
 
 
+## Automatic builds:
 ```
-Manual builds:
+- Goto Actions and run:
+    - CMake Build Linux for a Linux Build
+    - CMake Build Linux for a Windows Build
+    - CMake Multi-Platform C Build for a Linux and Windows Build
+    - Unit Tests for running Unit Tests
+
+```
+
+
+## Manual builds:
+```
 - change into direcory "CI-CD-Tests"
-
-Linux:
+- Linux:
     gcc -o build/program-linux src/main.c
-
-Windows (mingw64 is in path):
+- Windows (mingw64 is in path):
     gcc -o build/program-windows src/main.c
 ```
