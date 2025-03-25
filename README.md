@@ -25,6 +25,7 @@
     gcc -o build/program-windows src/main.c
 ```
 
+
 ## Unit tests:
 ```
 - change into directory "CI-CD-Tests/src"
