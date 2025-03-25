@@ -128,10 +128,10 @@ Grundlegende Nutzung
 
 Test(logging_example, test_logging) {
     cr_log_info("Dieser Test startet jetzt...\n");
-    
+
     int result = 2 + 3;
     cr_expect(result == 5, "Erwartet wurde 5, aber erhalten: %d", result);
-    
+
     cr_log_info("Dieser Test wurde erfolgreich abgeschlossen.\n");
 }
 
