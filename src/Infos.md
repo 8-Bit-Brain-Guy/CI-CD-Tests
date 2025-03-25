@@ -1,3 +1,12 @@
+Kompillieren mit:<br>
+``` gcc -o test_main main.c test_main.c -lcriterion ```
+
+Laufen lassen mit:<br>
+``` ./test_main ```
+
+<br>
+
+## Von ChatGPT:
 Hallo kannst du mir ein einfaches Beispiel zeigen, wie ich mit criterion einen unit test für einen c quellcode schreibe?
 ChatGPT:
 

@@ -1,5 +1,5 @@
 ## This GIT Repository is used for testing the following:
-    
+
     - CI/CD workflow using Actions
     - Unit Testing
 
@@ -23,4 +23,12 @@
     gcc -o build/program-linux src/main.c
 - Windows (mingw64 is in path):
     gcc -o build/program-windows src/main.c
+```
+
+## Unit tests:
+```
+- change into directory "CI-CD-Tests/src"
+- Linux:
+    gcc -o test_main main.c test_main.c -lcriterion
+    ./test_main
 ```
