@@ -29,6 +29,6 @@
 ```
 - change into directory "CI-CD-Tests/src"
 - Linux:
-    gcc -o test_main main.c test_main.c -lcriterion
-    ./test_main
+    gcc -o test_math_funcs test_math_funcs.c math_funcs.c -lcriterion
+    ./test_math_funcs --verbose
 ```

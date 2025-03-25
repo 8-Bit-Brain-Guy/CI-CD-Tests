@@ -1,6 +1,6 @@
 #include <criterion/criterion.h>
 #include <criterion/logging.h>
-#include "main.h"
+#include "math_funcs.h"
 
 // Setup-Funktion (optional, falls nötig)
 void setup(void)
